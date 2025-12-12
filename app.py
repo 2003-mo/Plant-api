@@ -83,7 +83,7 @@ async def predict(file: UploadFile = File(...), topk: int = 5):
 
 
 # للتشغيل المحلي فقط (ليس Render)
-if name == "main":
+if __name__ == "main":
     import uvicorn
     port = int(os.environ.get("PORT", 10000))
     uvicorn.run("app:app", host="0.0.0.0", port=port)

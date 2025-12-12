@@ -6,6 +6,7 @@ from tensorflow.keras.applications.mobilenet_v3 import preprocess_input
 from PIL import Image
 import io
 import os
+import uvicorn
 
 IMG_SIZE = (224, 224)
 
@@ -18,6 +19,10 @@ with open("labels.txt", "r", encoding="utf-8") as f:
     CLASS_NAMES = [line.strip() for line in f if line.strip()]
 
 app = FastAPI()
+if __name__ == "main":
+    port = int(os.environ.get("PORT", 10000))
+    uvicorn.run("app:app", host="0.0.0.0", port=port)
+
 # تحميل النموذج عند تشغيل السيرفر مرة واحدة
 MODEL_PATH = "SavedModel"
 model = tf.keras.models.load_model(MODEL_PATH,custom_objects={"confidence_metric":confidence_metric})

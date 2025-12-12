@@ -19,6 +19,14 @@ with open("labels.txt", "r", encoding="utf-8") as f:
     CLASS_NAMES = [line.strip() for line in f if line.strip()]
 
 app = FastAPI()
+@app.get("/status")
+def status():
+    return {"status":"ok"}
+
+@app.get("/plant")
+def plant():
+    return{"message": "plant endpoint works (GET)"}
+
 if __name__ == "main":
     port = int(os.environ.get("PORT", 10000))
     uvicorn.run("app:app", host="0.0.0.0", port=port)

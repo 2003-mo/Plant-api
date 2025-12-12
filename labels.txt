@@ -1,0 +1,15 @@
+Bacterial_spot
+Black_Measles
+Early_Blight
+Healthy
+Late_Blight
+Leaf_Spotting
+Mold
+Mosaic_Virus
+Orange_Haunglongbing_(Citrus_greening)
+Powdery_Mildew
+Rust
+Spider_Mites
+Target_Spot
+Yellow_Leaf_Curl_Virus
+scab
